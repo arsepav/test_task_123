@@ -1,0 +1,43 @@
+{
+  "buildings": [
+    {"id": 1, "address": "г. Москва, ул. Блюхера, 32/1", "latitude": 55.7558, "longitude": 37.6173},
+    {"id": 2, "address": "г. Москва, ул. Ленина, 1, офис 3", "latitude": 55.7512, "longitude": 37.6189},
+    {"id": 3, "address": "г. Москва, ул. Тверская, 10", "latitude": 55.7648, "longitude": 37.6053},
+    {"id": 4, "address": "Советская улица, 28, село Кошки, Самарская область", "latitude": 54.204109, "longitude": 50.467469}
+  ],
+  "activities": [
+    {"id": 1, "name": "Еда", "parent_id": null},
+    {"id": 2, "name": "Автомобили", "parent_id": null},
+    {"id": 3, "name": "Мясная продукция", "parent_id": 1},
+    {"id": 4, "name": "Молочная продукция", "parent_id": 1},
+    {"id": 5, "name": "Грузовые", "parent_id": 2},
+    {"id": 6, "name": "Легковые", "parent_id": 2},
+    {"id": 7, "name": "Запчасти", "parent_id": 6},
+    {"id": 8, "name": "Аксессуары", "parent_id": 6}
+  ],
+  "organizations": [
+    {"id": 1, "name": "ООО \"Рога и Копыта\"", "building_id": 1},
+    {"id": 2, "name": "ООО МясТорг", "building_id": 1},
+    {"id": 3, "name": "Молочный двор", "building_id": 2},
+    {"id": 4, "name": "Автозапчасти Плюс", "building_id": 3},
+    {"id": 5, "name": "Гастроном", "building_id": 4},
+    {"id": 6, "name": "Пельменная", "building_id": 4},
+    {"id": 7, "name": "Северные нивы", "building_id": 4}
+  ],
+  "organization_phones": [
+    {"id": 1, "organization_id": 1, "phone": "2-222-222"},
+    {"id": 2, "organization_id": 1, "phone": "3-333-333"},
+    {"id": 3, "organization_id": 1, "phone": "8-923-666-13-13"},
+    {"id": 4, "organization_id": 2, "phone": "8-800-111-22-33"},
+    {"id": 5, "organization_id": 3, "phone": "4-444-444"},
+    {"id": 6, "organization_id": 4, "phone": "5-555-555"}
+  ],
+  "organization_activities": [
+    {"organization_id": 1, "activity_id": 3},
+    {"organization_id": 1, "activity_id": 4},
+    {"organization_id": 2, "activity_id": 3},
+    {"organization_id": 3, "activity_id": 4},
+    {"organization_id": 4, "activity_id": 7},
+    {"organization_id": 4, "activity_id": 8}
+  ]
+}
