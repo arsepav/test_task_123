@@ -18,10 +18,13 @@ def list_organizations_by_building(building_id: int, db: Session = Depends(get_d
 
 @router.get("/activity/{activity_id}", response_model=list[OrganizationListResponse])
 def list_organizations_by_activity(activity_id: int, db: Session = Depends(get_db), _: str = Depends(verify_api_key)):
+    ids = get_activity_subtree_ids(db, activity_id)
+    if not ids:
+        return []
     return (
         db.query(Organization)
         .join(Organization.activities)
-        .filter(Organization.activities.any(id=activity_id))
+        .filter(Activity.id.in_(ids))
         .distinct()
         .all()
     )
